@@ -1,0 +1,15 @@
+h1{text-align:center;color:#8d9296;font-weight: 100;text-transform: uppercase}
+.speedometer {margin: 2em auto;height: 165px;width: 320px;overflow:hidden;display: flex;display: -webkit-flex;flex-direction: column;-webkit-flex-direction: column;align-items: center;-webkit-align-items: center;position: relative}
+.speedometerReadingBase {height: 150px;width: 300px;border-top-left-radius: 150px;border-top-right-radius: 150px;border: 20px solid #f6f5f6;border-bottom: 0;box-sizing: border-box;position: absolute;left: 10px;top: 0}
+.speedometerReading {position: absolute;left: 10px;top: 0;transform: rotate(-45deg);transition-duration:3s;height: 300px;width: 300px;background: transparent;border-radius: 50%;border: 20px solid #fe6c5c;border-color: transparent transparent #fe6c5c #fe6c5c;box-sizing: border-box;cursor: pointer;z-index: 1;  animation: movement 2s}
+.speedometerBase {width: 320px;height: 25px;background: white;position: relative;top: 150px;z-index: 999}
+.speedometerBase:before {content: '';width:320px;position: absolute;top: 0;border-bottom: 1px solid #eee; box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.5)}
+.speedometerCentreCircle {position: absolute;bottom: 0px;left: 50%;transform:translateX(-50%);width: 0;height: 0;z-index:99}
+.speedometerCentreCircle span{transform: rotate(-90deg);transition-duration:3s;content: "";display: block;position: absolute;bottom:15px;background:transparent;  border-left: 3px solid transparent;border-right: 3px solid transparent;border-bottom: 110px solid #ffc53b;   border-bottom-left-radius: 5em;border-bottom-right-radius: 5em;transform-origin: center 100%;animation: niddle 2s}
+.speedometerCentreCircle::after{content: ""; display: block;width: 40px;height:20px;-moz-border-radius: 20px  20px 0 0;-webkit-border-radius: 20px  20px 0 0;border-radius: 20px  20px 0 0;background: #dedede;position: absolute;bottom: 15px;left: 50%;transform:translateX(-50%);transition:2s}
+
+.meterRead{text-align:center;font-weight: 700}
+.meterRead .meterValue{color:#fe6d5c;font-size:3.5em}
+.meterRead .pingValue{color:#8d9296;font-size:1em}
+
+.range{color:#999;font-size:0.69em;margin-top:10px;display:block}
