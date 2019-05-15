@@ -39,7 +39,7 @@ export class SpeedoMeterComponent {
   <style>
 @keyframes movement {
     from {
-      transform: rotate(0deg);
+      transform: rotate(-45deg);
     }
     to {
       transform: rotate('{{readingSpeed}}' + deg);
@@ -48,36 +48,35 @@ export class SpeedoMeterComponent {
 
   @keyframes niddle {
     from {
-      transform: rotate(0deg);
+      transform: rotate(-90deg);
     }
     to {
       transform: rotate('{{niddleSpeed}}'+ deg);
     }
   }
 </style>
-<section class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 speedometerWrap">
-      <h1>Speedometer</h1>
-      <div class="speedometer">
-        <div class="speedometerReading" 
-          [style.transform]="'rotate(' + readingSpeed  + 'deg)'">
-        </div>
-        <div class="speedometerReadingBase"></div>
-        <div class="speedometerCentreCircle">
-          <span [style.transform]="'rotate(' + niddleSpeed  + 'deg)'"></span>
-        </div> 
-        <div class="speedometerBase"></div>   
-      </div>
-      <div class="meterRead">
-        <div class="meterValue">{{ speedScore }}</div>
-        <input type="number" min='0' max='100' [(ngModel)]='speedScore' class="form-control" (keyup)="getSpeed(speedScore)" (click)="getSpeed(speedScore)">
-        <br/>
-        <span class="range">(Min: 0 | Max: 100)</span>
-      </div>
+
+  
+<div class="speedometerWrap">
+  <h1>Speedometer</h1>
+  <div class="speedometer">
+    <div class="speedometerReading" 
+      [style.transform]="'rotate(' + readingSpeed  + 'deg)'">
     </div>
-    </div>
-</section>
+    <div class="speedometerReadingBase"></div>
+    <div class="speedometerCentreCircle">
+      <span [style.transform]="'rotate(' + niddleSpeed  + 'deg)'"></span>
+    </div> 
+    <div class="speedometerBase"></div>   
+  </div>
+  <div class="meterRead">
+    <div class="meterValue">{{ speedScore }}</div>
+    <input type="number" min='0' max='100' [(ngModel)]='speedScore' class="form-control" (keyup)="getSpeed(speedScore)" (click)="getSpeed(speedScore)">
+    <br/>
+    <span class="range">(Min: 0 | Max: 100)</span>
+  </div>    
+</div>
+
 
   ```
 
